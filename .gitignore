@@ -1,0 +1,6 @@
+# python cache
+*.py[oc]
+__pycache__/
+
+# other files
+*.sqlite3
