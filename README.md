@@ -1,2 +1,2 @@
 # RSMap
-Main repository of RSMap
+Repositorio principal de RSMap
