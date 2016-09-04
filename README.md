@@ -30,3 +30,9 @@ La plataforma web está desarrollada con el framework [Django](https://www.djang
 
 ![alt text](https://www.djangoproject.com/s/img/favicon.6dbf28c0650e.ico)
 ![alt text](https://avatars0.githubusercontent.com/u/11215076?v=3&s=400)
+
+### Instancias
+
+Todas las instancias se ejecutan dentro de [Amazon EC2](https://aws.amazon.com/ec2/).
+
+![alt text](http://cdn.slidesharecdn.com/profile-photo-AmazonWebServices-48x48.jpg?cb=1471098315)
