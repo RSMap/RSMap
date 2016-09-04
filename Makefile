@@ -1,5 +1,5 @@
 project=$(shell pwd)
-scripts=$(project)/scripts
+scripts=$(project)
 processes=4
 
 clean:
