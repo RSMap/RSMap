@@ -1,0 +1,5 @@
+CREATE FUNCTION rsmapv0.deltatimem()
+    CALLED ON NULL INPUT
+    RETURNS bigint
+    LANGUAGE java
+    AS $$ return (System.currentTimeMillis() - 60000);$$;
