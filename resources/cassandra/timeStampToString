@@ -1,0 +1,8 @@
+CREATE FUNCTION rsmapv0.timestamptostring(input bigint)
+    CALLED ON NULL INPUT
+    RETURNS text
+    LANGUAGE java
+    AS $$java.text.SimpleDateFormat formatter = new 
+java.text.SimpleDateFormat("hh:mm:ss"); java.util.Date time=new 
+java.util.Date(input); return formatter.format(time);$$;
+
