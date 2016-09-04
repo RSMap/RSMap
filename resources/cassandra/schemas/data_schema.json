@@ -1,0 +1,24 @@
+{
+	"type" : "record",
+	"name" : "AudioReport",
+	"namespace" : "org.kaaproject.kaa.schema.rsmap",
+	"fields" : [ {
+		"name" : "timestamp",
+		"type" : "long"
+	}, {
+		"name" : "zoneId",
+		"type" : {
+			"type" : "string",
+			"avro.java.string" : "String"
+		}
+	}, {
+		"name" : "deviceId",
+		"type" : {
+			"type" : "string",
+			"avro.java.string" : "String"
+		}
+	}, {
+		"name" : "level",
+		"type" : "double"
+	} ]
+}
