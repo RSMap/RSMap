@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import Receptor
+from rsmapweb.models import Signal
 
 # Register your models here.
-
-admin.site.register(Receptor)
+admin.site.register(Signal)

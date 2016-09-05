@@ -6,10 +6,14 @@ clean:
 	-rm -rf build
 	-rm -rf *~*
 	-find . -name '*.pyc' -exec rm {} \;
-	-rm -rf hotel.egg-info
+	-rm -rf rsmapweb.egg-info
 
 test: clean
 	python $(scripts)/manage.py test
+
+migrate:
+	python $(scripts)/manage.py makemigrations rsmapweb
+	python $(scripts)/manage.py migrate
 
 fresh_syncdb:
 	-rm -f $(project).sqlite
