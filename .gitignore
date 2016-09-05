@@ -4,3 +4,4 @@ __pycache__/
 
 # other files
 *.sqlite3
+rsmapweb/migrations/

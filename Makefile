@@ -27,3 +27,6 @@ collectstatic:
 
 run:
 	python $(scripts)/manage.py runserver 0.0.0.0:8000
+
+server_run:
+	sudo ../rsmapvirtualenv/bin/python manage.py runserver 0.0.0.0:80
