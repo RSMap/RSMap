@@ -33,98 +33,120 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+      #map {
+        height: 80%;
+        width: 100%;
+        margin-top: 5%;
+      }
+      .iframe-container{
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* Ratio 16:9 ( 100%/16*9 = 56.25% ) */
+      }
+      .iframe-container > *{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+      }
+   </style>
+
 
 </head>
 
 <body id="page-top">
+  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+              </button>
+              <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+          </div>
 
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
-            </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                  <li>
+                      <a class="page-scroll" href="#download">Download</a>
+                  </li>
+                  <li>
+                      <a class="page-scroll" href="#features">Features</a>
+                  </li>
+                  <li>
+                      <a class="page-scroll" href="#contact">Contact</a>
+                  </li>
+              </ul>
+          </div>
+          <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+  </nav>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="#download">Download</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#features">Features</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
+  <header>
+      <div class="container">
+          <div class="row">
+              <div class="col-sm-13">
+                  <div class="header-content">
 
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-7">
-                    <div class="header-content">
-                        <div class="header-content-inner">
-                            <h1>New Age is an app landing page that will help you beautifully showcase your new mobile app, or anything else!</h1>
-                            <a href="#download" class="btn btn-outline btn-xl page-scroll">Start Now for Free!</a>
+                        <div class="iframe-container">
+                        <div id="map"></div>
+
                         </div>
-                    </div>
-                </div>
-                <div class="col-sm-5">
-                    <div class="device-container">
-                        <div class="device-mockup iphone6_plus portrait white">
-                            <div class="device">
-                                <div class="screen">
-                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                    <img src="../static/img/demo-screen-1.jpg" class="img-responsive" alt="">
-                                </div>
-                                <div class="button">
-                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+                        <script>
+                          var map;
+                          function initMap() {
+                            map = new google.maps.Map(document.getElementById('map'), {
+                              center: {lat: -34.397, lng: 150.644},
+                              zoom: 8
+                            });
+                          }
+                        </script>
+                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASYM2qQYA-3JqAR6FyQ0FmWyIoj2-X_K0&callback=initMap"
+                        async defer></script>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2016 Start Bootstrap. All Rights Reserved.</p>
-            <ul class="list-inline">
-                <li>
-                    <a href="#">Privacy</a>
-                </li>
-                <li>
-                    <a href="#">Terms</a>
-                </li>
-                <li>
-                    <a href="#">FAQ</a>
-                </li>
-            </ul>
-        </div>
-    </footer>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </header>
 
-    <!-- jQuery -->
-    <script src="../static/vendor/jquery/jquery.min.js"></script>
+  <footer>
+      <div class="container">
+          <p>&copy; 2016 Start Bootstrap. All Rights Reserved.</p>
+          <ul class="list-inline">
+              <li>
+                  <a href="#">Privacy</a>
+              </li>
+              <li>
+                  <a href="#">Terms</a>
+              </li>
+              <li>
+                  <a href="#">FAQ</a>
+              </li>
+          </ul>
+      </div>
+  </footer>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <!-- jQuery -->
+  <script src="../static/vendor/jquery/jquery.min.js"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- Theme JavaScript -->
-    <script src="../static/js/new-age.min.js"></script>
+  <!-- Plugin JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+  <!-- Theme JavaScript -->
+  <script src="../static/js/new-age.min.js"></script>
 
 </body>
 
