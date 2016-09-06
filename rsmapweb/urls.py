@@ -8,4 +8,5 @@ urlpatterns = format_suffix_patterns([
     url(r'^api/signal/(?P<pk>[a-z0-9]+)/$', views.SignalDetail.as_view(), name='signal-detail'),
     url(r'^$', TemplateView.as_view(template_name='index.html')),
     url(r'^map/$', TemplateView.as_view(template_name='map.html')),
+    url(r'^test/$', TemplateView.as_view(template_name='a.html')),
 ])
