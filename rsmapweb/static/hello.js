@@ -25,17 +25,54 @@ $(document).ready(
           var signal = data[i];
           console.log(signal);
 
-          var unix = new Date();
-          unix.setTime( unix.getTime() - new Date().getTimezoneOffset()*60*1000 );
-          console.log(unix.getTime()/1000|0);
+          var signal_timestamp = parseFloat(signal['created']);
+          var now = ((new Date().getTime()-60000)/1000|0) ;
+          console.log("signal timestamp " + signal_timestamp);
+          console.log("now " + now);
+          console.log("------------");
 
 
+          //var signal_time = new Date()
+          // var signal_timestamp = parseFloat(signal['created']);
+          //
+          // var date_signal = new Date(signal_timestamp * 1000);
+          //
+          // date_signal = date_signal - new Date().getTimezoneOffset()*60*1000 ;
+          //
+          // console.log(date_signal);
+
+          // var signal_time = new Date();
+          //
+          // console.log(signal_time);
+          //
+          // var now_date = new Date();
+
+
+          //now_date.setTime( now_date.getTime() - new Date().getTimezoneOffset()*60*1000 );
+
+          //now_date = (now_date.getTime()/1000|0);
+
+          //now_date = now_date - 60000;
+
+          //onsole.log("now_date " + now_date + " " + Date(now_date));
+
+          //var signal_date = parseFloat(signal['created']);
+
+          //console.log("signal_date " + signal_date + " " + Date(signal_date));
+
+          //console.log("-----------");
+
+          //if(now_date <= signal_date){
+          if(signal_timestamp > now){
+            var location = new google.maps.LatLng(parseFloat(signal['lat']), parseFloat(signal['long']));
+            addMarker(location);
+          }
+          //}
           // var date =  Date().getTime();
           // var actual_time = (Math.round(new Date().getTime()/1000));
           // console.log(actual_time);
 
-          var location = new google.maps.LatLng(parseFloat(signal['lat']), parseFloat(signal['long']));
-          addMarker(location);
+
         }
       }
     );
