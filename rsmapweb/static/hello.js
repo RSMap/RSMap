@@ -9,7 +9,8 @@ $(document).ready(
   function worker(){
     $.ajax(
       {
-
+	
+	//url:"http://127.0.0.1:8000/api/signals.json"
         url:"http://52.210.3.41/api/signals.json",
 
         complete: function(){
