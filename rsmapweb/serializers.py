@@ -2,7 +2,7 @@ from rest_framework import serializers
 from rsmapweb.models import Signal, VEHICLE_TYPE
 
 class SignalSerializer(serializers.ModelSerializer):
-    created = serializers.DateTimeField(format="%s")
+    created = serializers.DateTimeField(format="%s", required=False)
 
     class Meta:
         model = Signal

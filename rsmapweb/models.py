@@ -24,7 +24,7 @@ class Signal(models.Model):
     device_id = models.TextField(primary_key=True)
     lat = models.DecimalField(max_digits=9, decimal_places=6)
     long = models.DecimalField(max_digits=9, decimal_places=6)
-    created = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now=True, blank=True)
     level = models.FloatField()
 
     type = models.CharField(
