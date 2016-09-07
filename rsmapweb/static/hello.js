@@ -13,7 +13,7 @@ $(document).ready(
         url:"http://127.0.0.1:8000/api/signals.json",
 
         complete: function(){
-          setTimeout(worker, 50000);
+          setTimeout(worker, 1000);
         }
       }
     ).then(
@@ -26,12 +26,16 @@ $(document).ready(
           console.log(signal);
 
           var signal_timestamp = parseFloat(signal['created']);
-          var now = ((new Date().getTime()-60000)/1000|0) ;
+          // convert now to seconds and one minute less
+          // (python timestamp comes in seconds
+          // that's the reason to divide by 1k
+          var now = ((new Date().getTime()-5000)/1000|0) ;
           console.log("signal timestamp " + signal_timestamp);
           console.log("now " + now);
           console.log("------------");
-
-
+          $('.greeting-id').empty();
+          var now_date = new Date();
+          $('.greeting-id').append("Last update " + now_date );
           //var signal_time = new Date()
           // var signal_timestamp = parseFloat(signal['created']);
           //
