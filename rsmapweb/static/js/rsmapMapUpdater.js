@@ -1,8 +1,11 @@
 var markers = [];
 
-
+// markers icon map
 var iconBase = '../static/img/vehicle/';
 var icons = {
+  connection: {
+    icon: iconBase + 'connection-signal.png'
+  },
   car: {
     icon: iconBase + 'car.png'
   },
@@ -14,14 +17,39 @@ var icons = {
   }
 };
 
+// shows bootstrapped messages
+bootstrap_alert = function () {}
+bootstrap_alert.warning = function (message, alert, timeout) {
+    $('<div id="floating_alert" class="alert alert-' + alert + ' fade in"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>' + message + '&nbsp;&nbsp;</div>').appendTo('body');
+
+    setTimeout(function () {
+        $(".alert").alert('close');
+    }, timeout);
+}
+
+// check if exists devices sending data via rest each 30 secs
+function checkDevices(){
+  $(function(){
+      $.getJSON('http://localhost:8000/api/signals.json', function(data) {
+          if(data.length == 0){
+            bootstrap_alert.warning('<strong>INFO:</strong> No devices sending data right now', 'warning', 4000);
+          }
+      });
+  });
+}
+
+setInterval( checkDevices, 30000 );
+
+
+// map update via AJAX
 $(document).ready(
   function worker(){
     $.ajax(
       {
         // first one for testing purposes, second one with server address
         // retrieve updated json with last valid signals
-	//url:"http://127.0.0.1:8000/api/signals.json",
-        url:"http://52.210.3.41/api/signals.json",
+	      url:"http://localhost:8000/api/signals.json",
+        //url:"http://52.210.3.41/api/signals.json",
 
         complete: function(){
           // next call will be in 1 second
@@ -37,7 +65,7 @@ $(document).ready(
         // run all json markers and add them to map
         for(var i = 0; i < data.length; i++){
           var signal = data[i];
-          console.log(signal);
+          //console.log(signal);
 
           var signal_timestamp = parseFloat(signal['created']);
           // convert now to seconds and 5 seconds less
@@ -69,12 +97,12 @@ function getIcon(level){
   level = parseFloat(level);
 
   // values are orientative
-  var icon = icons['motorcycle'].icon;
-  if(level > 80.5){
+  var icon = icons['connection'].icon;
+  if(level == -1.0){
+    icon = icons['connection'].icon;
+  } else if(level > 80.5){
     icon = icons['bus'].icon;
-    console.log("bus");
   } else if (level > 30.5){
-    console.log("coche");
     icon = icons['car'].icon;
   }
 

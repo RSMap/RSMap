@@ -33,9 +33,6 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <!-- Map Lib -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="../static/js/rsmapMapUpdater.js"></script>
 
     <!-- Map Style -->
     <style>
@@ -61,7 +58,22 @@
         height: 100%;
         width: 100%;
       }
+
+      .container {}
+      #floating_alert {
+         position: absolute;
+         top: 20px;
+         right: 20px;
+         z-index: 5000;
+     }
+
    </style>
+
+    <!-- Map Lib -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../static/js/rsmapMapUpdater.js"></script>
+
+
 
 
 </head>
@@ -97,7 +109,8 @@
                   <div class="header-content">
 
                         <div class="iframe-container">
-                        <div id="map"></div>
+
+                          <div id="map"></div>
 
                         </div>
                         <script>
