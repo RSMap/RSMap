@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>New Age - Start Bootstrap Theme</title>
+    <title>RSMap - TFG José Manuel Luque</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -33,6 +33,11 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!-- Map Lib -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../static/hello.js"></script>
+
+    <!-- Map Style -->
     <style>
       #map {
         height: 80%;
@@ -69,20 +74,14 @@
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                   <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
               </button>
-              <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+              <a class="navbar-brand page-scroll" href="http://rsmap.es">RSMap</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
                   <li>
-                      <a class="page-scroll" href="#download">Download</a>
-                  </li>
-                  <li>
-                      <a class="page-scroll" href="#features">Features</a>
-                  </li>
-                  <li>
-                      <a class="page-scroll" href="#contact">Contact</a>
+                      <a>Last update: <label class="last-update"></label></a>
                   </li>
               </ul>
           </div>
@@ -105,8 +104,8 @@
                           var map;
                           function initMap() {
                             map = new google.maps.Map(document.getElementById('map'), {
-                              center: {lat: -34.397, lng: 150.644},
-                              zoom: 8
+                              center: {lat: 39.43359, lng: -6.93371},
+                              zoom: 6
                             });
                           }
                         </script>

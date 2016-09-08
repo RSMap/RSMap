@@ -1,7 +1,3 @@
-// $(function(){
-//
-// });
-
 var markers = [];
 
 
@@ -9,9 +5,9 @@ $(document).ready(
   function worker(){
     $.ajax(
       {
-	
-	//url:"http://127.0.0.1:8000/api/signals.json"
-        url:"http://52.210.3.41/api/signals.json",
+
+	      url:"http://127.0.0.1:8000/api/signals.json",
+        //url:"http://52.210.3.41/api/signals.json",
 
         complete: function(){
           setTimeout(worker, 1000);
@@ -34,9 +30,9 @@ $(document).ready(
           console.log("signal timestamp " + signal_timestamp);
           console.log("now " + now);
           console.log("------------");
-          $('.greeting-id').empty();
+          $('.last-update').empty();
           var now_date = new Date();
-          $('.greeting-id').append("Last update " + now_date );
+          $('.last-update').append(now_date);
           //var signal_time = new Date()
           // var signal_timestamp = parseFloat(signal['created']);
           //
