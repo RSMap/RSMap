@@ -20,8 +20,8 @@ $(document).ready(
       {
         // first one for testing purposes, second one with server address
         // retrieve updated json with last valid signals
-	      url:"http://127.0.0.1:8000/api/signals.json",
-        //url:"http://52.210.3.41/api/signals.json",
+	//url:"http://127.0.0.1:8000/api/signals.json",
+        url:"http://52.210.3.41/api/signals.json",
 
         complete: function(){
           // next call will be in 1 second
