@@ -30,7 +30,7 @@ bootstrap_alert.warning = function (message, alert, timeout) {
 // check if exists devices sending data via rest each 30 secs
 function checkDevices(){
   $(function(){
-      $.getJSON('http://localhost:8000/api/signals.json', function(data) {
+      $.getJSON('http://52.210.3.41/api/signals.json', function(data) {
           if(data.length == 0){
             bootstrap_alert.warning('<strong>INFO:</strong> No devices sending data right now', 'warning', 4000);
           }
@@ -48,8 +48,8 @@ $(document).ready(
       {
         // first one for testing purposes, second one with server address
         // retrieve updated json with last valid signals
-	      url:"http://localhost:8000/api/signals.json",
-        //url:"http://52.210.3.41/api/signals.json",
+	//url:"http://localhost:8000/api/signals.json",
+        url:"http://52.210.3.41/api/signals.json",
 
         complete: function(){
           // next call will be in 1 second
