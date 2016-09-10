@@ -68,18 +68,18 @@ $(document).ready(
           //console.log(signal);
 
           var signal_timestamp = parseFloat(signal['created']);
-          // convert now to seconds and 5 seconds less
+          // convert now to seconds and 2 seconds less
           // (python timestamp comes in seconds)
           // that's the reason to divide by 1k
-          var now = ((new Date().getTime()-5000)/1000|0) ;
+          var now = ((new Date().getTime()-2000)/1000|0) ;
 
           // update 'last update' field
           $('.last-update').empty();
           var now_date = new Date();
           $('.last-update').append(now_date);
 
-          // now was reduced 5 seconds so if signal_timestamp is greather than
-          // now means it was in a interval between now and 5 secs later
+          // now was reduced 2 seconds so if signal_timestamp is greather than
+          // now means it was in a interval between now and 2 secs later
           if(signal_timestamp > now){
             var location = new google.maps.LatLng(parseFloat(signal['lat']), parseFloat(signal['long']));
             var level = signal['level'];
@@ -96,13 +96,17 @@ $(document).ready(
 function getIcon(level){
   level = parseFloat(level);
 
-  // values are orientative
-  var icon = icons['connection'].icon;
+  // values are orientative it's may deppend of the road characteristics
+  // -1 device connected
+  // x > 55.5 heavyweight vehicle
+  // 55.5 > x > 45.5 mid vehicle
+  // x < 45.5 lightweight vehicle
+  var icon = icons['motorcycle'].icon;
   if(level == -1.0){
     icon = icons['connection'].icon;
-  } else if(level > 80.5){
+  } else if(level > 55.5){
     icon = icons['bus'].icon;
-  } else if (level > 30.5){
+  } else if (level > 45.5){
     icon = icons['car'].icon;
   }
 
