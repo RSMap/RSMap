@@ -28,6 +28,10 @@ Para consultar de manera gráfica la información de Cassandra se usa [Apache Ze
 
 La plataforma web está desarrollada con el framework [Django](https://www.djangoproject.com/) en **Python**, además la api REST se define mediante el módulo [Django Rest Framework](http://www.django-rest-framework.org/http://www.django-rest-framework.org/).
 
+El tema (Bootstrap) usado es: [New Age](http://startbootstrap.com/template-overviews/new-age/) junto a  [AJAX](http://www.w3schools.com/ajax/).
+
+El mapa es proporcionado por [Google Maps API](https://developers.google.com/maps/?hl=es) .
+
 ![alt text](https://www.djangoproject.com/s/img/favicon.6dbf28c0650e.ico)
 ![alt text](https://avatars0.githubusercontent.com/u/11215076?v=3&s=400)
 
